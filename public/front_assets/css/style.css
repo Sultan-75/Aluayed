@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.au-btn-accent {
+  background-color: #145f9b;
+  color: #fff;
+  transition: all 500ms ease !important;
+}
+.au-btn-accent:hover {
+  background-color: #203163;
+  color: #fff;
+}
+
+.au-bg-accent {
+  background-color: #145f9b;
+}
+
+.au-nav-accent {
+  background-color: #145f9b;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.au-text-accent {
+  color: #145f9b;
+}
+
+.au-text-primary {
+  color: #203163;
+}
+
+.au-top-contact-icon {
+  color: #145f9b;
+  margin-right: 5px;
+}
+.au-top-contact-icon:hover {
+  color: #203163;
+}
+
+.au-nav-fill {
+  background-color: #145f9b;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 88px;
+    right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 50%;
+    height: 100%;
+    z-index: 999;
+  }
+  .navbar-toggler-icon {
+    color: #fff;
+    font-size: 22px;
+  }
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-toggler > .close {
+    display: inline;
+  }
+  .navbar-toggler.collapsed > .close,
+  .navbar-toggler:not(.collapsed) > .navbar-toggler-icon {
+    display: none;
+  }
+  .navbar-collapse.collapsing {
+    right: -75%;
+    transition: height 0s ease;
+  }
+  .navbar-collapse.show {
+    right: 0;
+    transition: right 300ms ease-in-out;
+  }
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: right 300ms ease-in-out;
+  }
+}
+@media (min-width: 950px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+.nav-item {
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.nav-item:hover {
+  background-color: #203163;
+}
+
+.au-btn-donate {
+  padding: 5px 10px;
+  background-color: #157c2c;
+}
+.au-btn-donate:hover {
+  background-color: #0c4518;
+}
+
+.au-heading {
+  color: #1c86c0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.au-card {
+  transition: all 300ms ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.au-card:hover {
+  scale: 1.02;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.au-btn-card {
+  /* background-color: color(donate); */
+  border: 2px solid #157c2c;
+  color: #157c2c;
+  transition: all 500ms ease !important;
+}
+.au-btn-card:hover {
+  background-color: #0c4518;
+  color: #fff;
+}
+
+.au-card-overall {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease !important;
+}
+.au-card-overall:hover {
+  scale: 1.02;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.au-btn-card-bottom {
+  background-color: #1c86c0;
+  color: #fff;
+  transition: all 500ms ease !important;
+}
+.au-btn-card-bottom:hover {
+  background-color: #203163;
+  color: #fff;
+}
+
+.quote {
+  background-image: url("../images/parallax.jpg");
+  min-height: 200px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+footer {
+  background-color: #203163;
+}
+
+.au-footer-list {
+  list-style: none;
+  line-height: 35px;
+  color: #fff;
+}
+.au-footer-list a {
+  color: #fff;
+}
+.au-footer-list a i {
+  color: #fff;
+}
+.au-footer-list a i:hover {
+  color: #1c86c0;
+}
+
+.au-footer-contact {
+  color: #fff;
+  font-size: 18px;
+}
+
+.au-page-header-img {
+  filter: brightness(0.5);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$colors: (
+  accent: #145f9b,
+  primary: #203163 ,
+  secondary: #1c86c0,
+  text:#fff,
+  donate:#157c2c,
+  donate-hover:#0c4518,
+);
+
+//for colirs
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+*{
+    text-decoration: none;
+    
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+//universal
+.au-btn-accent{
+background-color: color(accent);
+color: color(text);
+transition: all 500ms ease !important;
+&:hover{
+    background-color: color(primary);
+    color: color(text);
+}
+}
+.au-bg-accent{
+    background-color: color(accent);
+    }
+.au-nav-accent{
+    background-color: color(accent);
+    color: color(text);
+    }
+a{
+    text-decoration: none;
+}
+
+.au-text-accent{
+    color: color(accent);
+}
+.au-text-primary{
+    color: color(primary);
+}
+    //top contact
+.au-top-contact-icon{
+    color: color(accent);
+    margin-right: 5px;
+    &:hover{
+        color: color(primary);
+    }
+}
+
+//nav start
+.au-nav-fill{
+    background-color: color(accent);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+@media (max-width:992px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 88px;
+        right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 50%;
+        height: 100%;
+        z-index: 999;
+      }
+      
+ .navbar-toggler-icon{
+    color: color(text);
+    font-size: 22px;
+    
+ }
+ .navbar-toggler{
+    border: none;
+ }
+
+ .navbar-toggler > .close {
+    display: inline;
+  }
+  .navbar-toggler.collapsed > .close,
+  .navbar-toggler:not(.collapsed) > .navbar-toggler-icon {
+    display: none;
+  }
+  
+  .navbar-collapse.collapsing {
+    right: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+    transition: right 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: right 300ms ease-in-out;
+  }    
+ 
+}
+
+@media (min-width:950px) {
+   
+    .dropdown{
+        &:hover .dropdown-menu{
+            display: block;
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+    .nav-item{
+        transition: all .5s ease;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 15px;
+        padding: 5px 10px;
+        &:hover{
+            background-color: color(primary);
+            
+        }
+    }
+.au-btn-donate{
+    padding: 5px 10px;
+    background-color: color(donate);
+    &:hover{
+        background-color: color(donate-hover);
+    }
+}
+
+//nav end
+
+//latest appeal
+.au-heading{
+    color: color(secondary);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.au-card{
+    transition: all 300ms ease;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    &:hover{
+        scale: 1.02;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+}
+.au-btn-card{
+    /* background-color: color(donate); */
+    border: 2px solid color(donate);
+    color: color(donate);
+    transition: all 500ms ease !important;
+    &:hover{
+        background-color: color(donate-hover);
+        color: color(text);
+    }
+}
+
+.au-card-overall{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 500ms ease !important;
+    &:hover{
+        scale: 1.02;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+//bottom card
+.au-btn-card-bottom{
+    background-color: color(secondary);
+    color: color(text);
+    transition: all 500ms ease !important;
+    &:hover{
+        background-color: color(primary);
+        color: color(text);
+    }
+}
+
+.quote {
+    background-image: url("../images/parallax.jpg");
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+   
+  }
+
+  footer{
+    background-color: color(primary);
+  }
+
+  .au-footer-list{
+    list-style: none;
+    line-height: 35px;
+    color: color(text) ;
+    a{
+        color: color(text) ;
+
+        i{
+            color: color(text) ;
+            &:hover{
+                color: color(secondary);
+            } 
+        }
+    }
+
+  }
+  .au-footer-contact{
+    color: color(text);
+    font-size: 18px;
+  }
+
+
+  .au-page-header-img{
+    filter: brightness(.5);
+  }
+
