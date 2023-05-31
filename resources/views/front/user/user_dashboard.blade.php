@@ -36,7 +36,14 @@
             <div class="d-flex justify-content-center">
                 <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home"
+                        <button class="nav-link active" id="pills-d-tab" data-toggle="pill"
+                            data-target="#pills-donation" type="button" role="tab" aria-controls="pills-donation"
+                            aria-selected="true">
+                            Donation
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-home-tab" data-toggle="pill" data-target="#pills-home"
                             type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                             Profile
                         </button>
@@ -57,7 +64,14 @@
             </div>
 
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="tab-pane fade show active" id="pills-donation" role="tabpanel"
+                    aria-labelledby="pills-donation">
+                    <!--  content starts here -->
+                    <h3 class="text-center">Donation</h3>
+
+                    <!--  content ends here -->
+                </div>
+                <div class="tab-pane fade show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     <!--  content starts here -->
                     <h3 class="text-center">General Information</h3>
                     <div class="row mt-3">

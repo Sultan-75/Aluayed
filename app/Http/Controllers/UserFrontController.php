@@ -123,9 +123,45 @@ class UserFrontController extends Controller
             return redirect('/donate/user/login');
         }
     }
-    public function edit_profile()
+    public function edit_profile(Request $request)
     {
-        return view('front.user.edit_profile');
+        if ($request->session()->has('FRONT_USER_ID')) {
+            $id = $request->session()->get('FRONT_USER_ID');
+            $arr = UserFront::where(['id' => $id])->get();
+            $result['id'] = $arr[0]->id;
+            $result['title'] = $arr[0]->title;
+            $result['fname'] = $arr[0]->fname;
+            $result['lname'] = $arr[0]->lname;
+            $result['mobile'] = $arr[0]->mobile;
+            $result['phone'] = $arr[0]->phone;
+            $result['pcode'] = $arr[0]->pcode;
+            $result['address1'] = $arr[0]->address1;
+            $result['address2'] = $arr[0]->address2;
+            $result['address3'] = $arr[0]->address3;
+            $result['town'] = $arr[0]->town;
+            return view('front.user.edit_profile', $result);
+        } else {
+            return redirect('/donate/user/login');
+        }
+    }
+    public function edit_profile_process(Request $request)
+    {
+        $msg = "Profile Updated";
+        UserFront::where(['id' => $request->id])
+            ->update([
+                'fname' => $request->fname,
+                'lname' =>  $request->lname,
+                'title' =>  $request->title,
+                'phone' =>  $request->phone,
+                'mobile' =>  $request->mobile,
+                'pcode' =>  $request->pcode,
+                'address1' =>  $request->address1,
+                'address2' =>  $request->address2,
+                'address3' =>  $request->address3,
+                'town' =>  $request->town,
+            ]);
+        $request->session()->flash('message', $msg);
+        return redirect('/donate/user/editprofile');
     }
     public function forget_pass_page()
     {

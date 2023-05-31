@@ -69,12 +69,12 @@
                             <a class="nav-link text-white" href="{{ url('/emergencyappeal') }}">Emergency Appeals</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="#" role="button" data-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link text-white" href="{{ url('/project') }}" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
                                 Projects
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Projects you can support</a>
+                                <a class="dropdown-item" href="{{ url('/project') }}">Projects you can support</a>
                                 <a class="dropdown-item" href="#">Where we work</a>
                                 <a class="dropdown-item" href="#">Latest news</a>
                             </div>

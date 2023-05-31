@@ -21,6 +21,7 @@ Route::get('/', [FrontController::class, 'index']);
 Route::get('/emergencyappeal', [FrontController::class, 'emergencyappeal']);
 Route::get('/donate/online', [FrontController::class, 'donate_online']);
 Route::get('/donate/bank', [FrontController::class, 'donate_bank']);
+Route::get('/project', [FrontController::class, 'project']);
 
 Route::get('/donate/user/login', [UserFrontController::class, 'login']);
 Route::post('/donate/user/login_process', [UserFrontController::class, 'login_process'])->name('login.r_l');
@@ -40,6 +41,7 @@ Route::post('/donate/user/registration_process', [UserFrontController::class, 'r
 Route::get('/verification/{id}', [UserFrontController::class, 'email_verification']);
 Route::get('/donate/user/dashboard', [UserFrontController::class, 'dashboard']);
 Route::get('/donate/user/editprofile', [UserFrontController::class, 'edit_profile']);
+Route::post('/donate/user/edit_profile_process', [UserFrontController::class, 'edit_profile_process'])->name('edit.e_p');
 /* end Front-end routes */
 
 /* Start Back-end Routes */

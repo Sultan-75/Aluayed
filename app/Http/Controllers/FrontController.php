@@ -22,4 +22,8 @@ class FrontController extends Controller
     {
         return view('front.donate_bank');
     }
+    public function project()
+    {
+        return view('front.projects');
+    }
 }
