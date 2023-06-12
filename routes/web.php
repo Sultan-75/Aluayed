@@ -50,6 +50,8 @@ Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login
 Route::group(['middleware' => 'admin_auth'], function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
     Route::get('admin/setting', [AdminController::class, 'setting']);
+    Route::post('admin/user/register', [AdminController::class, 'registration'])->name('admin.registration');
+    Route::get('admin/user/delete/{id}', [AdminController::class, 'delete_user']);
     Route::get('admin/profile', [AdminController::class, 'profile']);
     Route::post('admin/profile_update', [AdminController::class, 'profile_update'])->name('admin.profile_update');
 

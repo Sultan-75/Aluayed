@@ -41,7 +41,8 @@
                                             <td>{{ $item->role }}</td>
                                             <td>
                                                 <a onclick="return confirm('Are You Sure to Remove a User!');"
-                                                    href="" class="btn btn-danger btn-sm">Remove</a>
+                                                    href="{{ url('admin/user/delete') }}/{{ $item->id }}"
+                                                    class="btn btn-danger btn-sm">Remove</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -65,20 +66,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="{{ route('admin.registration') }}" method="post">
+                        @csrf
                         <div class="form-row">
                             <div class="col">
                                 <label for="name" class="control-label mb-1 font-weight-bold">User Name
                                 </label>
                                 <input id="name" name="name" type="text" value="" class="form-control"
-                                    aria-required="true" aria-invalid="false" required />
+                                    aria-required="true" aria-invalid="false" />
+                                <span class="help-block text-danger">
+                                    @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label for="email" class="control-label mb-1 font-weight-bold">User Email</label>
                                 <input id="email" name="email" type="email" value="" class="form-control"
-                                    aria-required="true" aria-invalid="false" required />
+                                    aria-required="true" aria-invalid="false" />
+                                <span class="help-block text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
                             </div>
                         </div>
                         <div class="form-row">
@@ -86,9 +98,14 @@
                                 <label for="userrole" class="control-label mb-1 font-weight-bold">User Role</label>
                                 <select name="role" id="" class="form-control">
                                     <option>Select A Role</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Author</option>
                                 </select>
+                                <span class="help-block text-danger">
+                                    @error('role')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
                             </div>
                         </div>
                         <div class="form-row">
@@ -96,6 +113,11 @@
                                 <label for="password" class="control-label mb-1 font-weight-bold">Password</label>
                                 <input id="password" name="password" type="password" value="" class="form-control"
                                     aria-required="true" aria-invalid="false" />
+                                <span class="help-block text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
                             </div>
                         </div>
 

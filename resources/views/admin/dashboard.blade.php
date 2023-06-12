@@ -35,6 +35,12 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        @include('admin.doughnut_chart')
+                    </div>
                 </div>
             </div>
         </div>

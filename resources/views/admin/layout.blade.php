@@ -92,7 +92,7 @@
                     </div>
                 </a>
                 <!-- Submenu content -->
-                <div id="submenu2" class="collapse show sidebar-submenu">
+                <div id="submenu2" class="collapse sidebar-submenu">
                     <a href="{{ url('admin/category/manage_donation') }}"
                         class="@yield('donation_select') list-group-item list-group-item-action bg-dark text-white">
                         <span class="menu-collapsed">Donation Category</span>

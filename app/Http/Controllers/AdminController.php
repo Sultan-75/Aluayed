@@ -16,6 +16,24 @@ class AdminController extends Controller
     {
         return view('admin.login');
     }
+    public function registration(Request $request)
+    {
+        $request->validate(
+            [
+                'email' => 'required|email',
+                'password' => 'required',
+                'role' => 'required',
+                'name' => 'required'
+            ]
+        );
+        $model = new Admin();
+        $model->name = $request->post('name');
+        $model->email = $request->post('email');
+        $model->password = $request->post('password');
+        $model->role = $request->post('role');
+        $model->save();
+        return redirect('admin/setting');
+    }
     public function login(Request $request)
     {
         $request->validate(
@@ -78,5 +96,12 @@ class AdminController extends Controller
         }
         Admin::where(['id' => $id])->update(['name' => $name, 'email' => $email, 'password' => $password]);
         return view('admin.dashboard');
+    }
+    public function delete_user(Request $request, $id)
+    {
+        $model = Admin::find($id);
+        $model->delete();
+        $request->session()->flash('message', 'User Deleted');
+        return redirect('admin/setting');
     }
 }
