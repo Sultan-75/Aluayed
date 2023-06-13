@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UserFront;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class UserFrontController extends Controller
@@ -100,7 +101,7 @@ class UserFrontController extends Controller
             return redirect('/donate/user/login');
         }
     }
-    public function dashboard(Request $request)
+    public function dashboard(Request $request, $name = '')
     {
         if ($request->session()->has('FRONT_USER_ID')) {
             $id = $request->session()->get('FRONT_USER_ID');
@@ -110,7 +111,6 @@ class UserFrontController extends Controller
             $result['fname'] = $arr[0]->fname;
             $result['lname'] = $arr[0]->lname;
             $result['email'] = $arr[0]->email;
-            //$result['password'] = Crypt::decrypt($arr[0]->password);
             $result['mobile'] = $arr[0]->mobile;
             $result['phone'] = $arr[0]->phone;
             $result['pcode'] = $arr[0]->pcode;
@@ -118,8 +118,19 @@ class UserFrontController extends Controller
             $result['address2'] = $arr[0]->address2;
             $result['address3'] = $arr[0]->address3;
             $result['town'] = $arr[0]->town;
+
+            $result['category'] = DB::table('post_categories')->get();
+            if ($name != '') {
+                $arr = DB::table('post_categories')
+                    ->where(['category_name' => $name])->get();
+                $result['select_category_name'] = $arr[0]->category_name;
+            } else {
+                $result['select_category_name'] = '';
+            }
+
             return view('front.user.user_dashboard', $result);
         } else {
+            $request->session()->flash('error', 'Please Login');
             return redirect('/donate/user/login');
         }
     }

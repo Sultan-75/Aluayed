@@ -11,50 +11,21 @@
         <div class="container mt-5">
             <div class="text-center mb-5 au-heading">Latest Appeals</div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top img-fluid" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Nigeria health care
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
+                @foreach ($posts as $item)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card au-card">
+                            <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top img-fluid" />
+                            <div class="card-body text-center">
+                                <h5 class="card-text text-center au-text-primary">
+                                    {{ $item->post_name }}
+                                </h5>
+                                <a href="{{ url('/donate/donation') }}/{{ $item->category_name }}"
+                                    class="btn au-btn-card mt-2">Donate
+                                    now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Nigeria health care
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Nigeria health care
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Nigeria health care
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="row mt-5 text-center">
                 <div class="col-12">

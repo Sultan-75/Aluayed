@@ -35,6 +35,9 @@
                         <i class="fa fa-user"></i> {{ session('ADMIN_NAME') }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+                        <a class="dropdown-item" target="_blank" href="{{ url('/') }}"><i class="fa fa-glove"></i>
+                            Go to Site</a>
+                        <hr>
                         <a class="dropdown-item" href="{{ url('admin/profile') }}"><i class="fa fa-user"></i>
                             Profile</a>
                         <hr />

@@ -21,14 +21,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-6 text-md-center text-sm-center">
-                    <span><i class="fa fa-phone"></i> +44 123 123 | </span>
-                    <span><i class="fa fa-envelope"></i> abc@gmail.com</span>
+                    <span><i class="fa fa-phone"></i> +447783030973 | </span>
+                    <span><i class="fa fa-envelope"></i> alubaydfoundation@gmail.com</span>
                 </div>
                 <div class="col-md-12 col-lg-6 text-lg-right text-md-center text-sm-center">
-                    <i class="au-top-contact-icon fa-brands fa-facebook-f"></i>
-                    <i class="au-top-contact-icon fa-brands fa-twitter"></i>
-                    <i class="au-top-contact-icon fa-brands fa-instagram"></i>
-                    <i class="au-top-contact-icon fa-brands fa-youtube"></i>
+                    <a target="_blank" href="https://www.facebook.com/alubaydfoundation"><i
+                            class="au-top-contact-icon fa-brands fa-facebook-f"></i></a>
+
+                    <a target="_blank" href="https://www.instagram.com/alubaydfoundation"><i
+                            class="au-top-contact-icon fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -56,14 +57,9 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="#" role="button" data-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link text-white" href="{{ url('/about') }}">
                                 About Us
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Who we are</a>
-                                <a class="dropdown-item" href="#">What we do</a>
-                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/emergencyappeal') }}">Emergency Appeals</a>
@@ -83,7 +79,7 @@
                             <a class="nav-link text-white" href="#">Clothing Banks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Contact Us
+                            <a class="nav-link text-white" href="{{ url('/contact') }}">Contact Us
                             </a>
                         </li>
 
@@ -112,62 +108,48 @@
                 <div class="col-lg-3 col-md-6">
                     <h3 class="text-white">Al Ubayed Foundation</h3>
                     <p class="text-light py-3 text-justify">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Alias natus voluptatibus officiis veniam,
-                        vitae maiores eaque quis sunt, sequi saepe
-                        accusantium exercitationem itaque autem similique.
+                        Al Ubayd Foundation is a registered charity ( Charity Reg No 1198160
+                        ) working as a voluntary charity organisation for the Jamea Ubaydul
+                        Haque Rh, Orphanage & Women’s Centre
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-5">Quick Links</h4>
                     <ul class="au-footer-list">
-                        <li><a href=""> About</a></li>
+                        <li><a href="">About Us</a></li>
                         <li><a href="">Emergency Appeals</a></li>
                         <li><a href="">Projects</a></li>
                         <li><a href="">Clothing Banks</a></li>
                         <li><a href="">Contact Us</a></li>
-                        <li><a href="">Donate</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-2 col-md-6">
                     <h4 class="text-light mb-5">Social Links</h4>
                     <ul class="au-footer-list">
                         <li class="mb-2">
-                            <a href="">
-                                <span>Facebook</span>
-                            </a>
+                            <a target="_blank" href="https://www.facebook.com/alubaydfoundation">Facebook</a>
                         </li>
                         <li class="mb-2">
-                            <a href=""> <span> Twitter </span> </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="">
-                                <span>Instagram</span>
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href=""><span>Youtube</span> </a>
+                            <a target="_blank" href="https://www.instagram.com/alubaydfoundation">Instagram</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-5">Contact Us</h4>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-5">Contact</h4>
                     <div class="au-footer-contact mt-3">
-                        <span class="mr-2"><i class="fa fa-phone"></i></span>
-                        <span>+44 123 123</span>
+                        <span><i class="fa fa-phone"></i> +447783030973 | +447984016340</span>
                     </div>
                     <div class="au-footer-contact mt-3">
-                        <span class="mr-2"><i class="fa fa-envelope"></i></span>
-                        <span>abc@example.com</span>
+                        <span><i class="fa fa-envelope"></i> alubaydfoundation@gmail.com</span>
                     </div>
                     <div class="au-footer-contact mt-3">
                         <span class="mr-2"><i class="fa fa-location-dot"></i></span>
-                        <span>london, UK</span>
+                        <span>London, UK</span>
                     </div>
                 </div>
             </div>
         </div>
-
+        <hr>
         <div class="container">
             <div class="text-center p-2" style="color: rgb(241, 240, 240)">
                 © 2023-2024 Copyright Al Ubayed Foundation

@@ -28,19 +28,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Sort Code</th>
-
-                                <td>123123</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Account Number</th>
-                                <td>1425244444</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Bank name and address:</th>
                                 <td>
                                     Al Rayan Bank, 24a Calthorpe Road, Birmingham, B15 1RP
                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sort Code</th>
+
+                                <td>30-91-92</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Account Number</th>
+                                <td>74931968</td>
                             </tr>
                         </tbody>
                     </table>
@@ -60,19 +60,27 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Sort Code</th>
-
-                                <td>123123</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Account Number</th>
-                                <td>1425244444</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Bank name and address:</th>
                                 <td>
                                     Al Rayan Bank, 24a Calthorpe Road, Birmingham, B15 1RP
                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sort Code</th>
+
+                                <td>30-91-92</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Account Number</th>
+                                <td>74931968</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">BIC</th>
+                                <td>LOYDGB21075</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">IBAN</th>
+                                <td>GB48 LOYD 3091 9274 9319 68</td>
                             </tr>
                         </tbody>
                     </table>
