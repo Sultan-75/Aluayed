@@ -16,9 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $result['data'] = post::all();
+
         $result['data'] = Post::join('post_categories', 'post_categories.id', '=', 'posts.cat_id')
             ->get(['posts.*', 'post_categories.category_name']);
+        // $result['data'] = post::all();
         return view('admin.posts', $result);
     }
     public function manage_post(Request $request, $id = '')

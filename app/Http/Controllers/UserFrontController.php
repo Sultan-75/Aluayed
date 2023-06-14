@@ -101,7 +101,7 @@ class UserFrontController extends Controller
             return redirect('/donate/user/login');
         }
     }
-    public function dashboard(Request $request, $name = '')
+    public function dashboard(Request $request)
     {
         if ($request->session()->has('FRONT_USER_ID')) {
             $id = $request->session()->get('FRONT_USER_ID');
@@ -119,14 +119,14 @@ class UserFrontController extends Controller
             $result['address3'] = $arr[0]->address3;
             $result['town'] = $arr[0]->town;
 
-            $result['category'] = DB::table('post_categories')->get();
-            if ($name != '') {
-                $arr = DB::table('post_categories')
-                    ->where(['category_name' => $name])->get();
-                $result['select_category_name'] = $arr[0]->category_name;
-            } else {
-                $result['select_category_name'] = '';
-            }
+            // $result['category'] = DB::table('post_categories')->get();
+            // if ($name != '') {
+            //     $arr = DB::table('post_categories')
+            //         ->where(['category_name' => $name])->get();
+            //     $result['select_category_name'] = $arr[0]->category_name;
+            // } else {
+            //     $result['select_category_name'] = '';
+            // }
 
             return view('front.user.user_dashboard', $result);
         } else {
@@ -222,5 +222,18 @@ class UserFrontController extends Controller
 
         $request->session()->flash('message', 'Your Password Changed,Now Login');
         return redirect('/donate/user/login');
+    }
+    public function donation(Request $request, $name)
+    {
+        $result['category'] = DB::table('post_categories')->get();
+        if ($name != '') {
+            $arr = DB::table('post_categories')
+                ->where(['category_name' => $name])->get();
+            $result['select_category_name'] = $arr[0]->category_name;
+        } else {
+            $result['select_category_name'] = '';
+        }
+
+        return view('front.donate_online', $result);
     }
 }

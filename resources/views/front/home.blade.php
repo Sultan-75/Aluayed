@@ -9,12 +9,13 @@
     <section>
 
         <div class="container mt-5">
-            <div class="text-center mb-5 au-heading">Latest Appeals</div>
+            <div class="text-center mb-5 au-heading">Most Recent</div>
             <div class="row">
                 @foreach ($posts as $item)
                     <div class="col-lg-3 col-md-6">
                         <div class="card au-card">
-                            <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top img-fluid" />
+                            <img class="card-img-top img-fluid" src="{{ asset('storage/media/post/' . $item->image) }}"
+                                alt="Card image" style="height:200px" />
                             <div class="card-body text-center">
                                 <h5 class="card-text text-center au-text-primary">
                                     {{ $item->post_name }}
@@ -29,8 +30,8 @@
             </div>
             <div class="row mt-5 text-center">
                 <div class="col-12">
-                    <a href="">
-                        <h6 class="au-text-primary">More Appeals</h6>
+                    <a href="{{ url('/project') }}">
+                        <h6 class="au-text-primary">More Projects</h6>
                     </a>
                 </div>
             </div>
@@ -157,7 +158,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-6">
-                    <img class="img-fluid" src="{{ asset('front_assets/images/lower-section.jpg') }}" alt="" />
+                    <img class="img-fluid" src="{{ asset('front_assets/images/1 (4).jpeg') }}" alt="" />
                 </div>
                 <div class="col-md-6 text-center my-auto">
                     <h4 class="au-text-primary mt-2">
@@ -193,7 +194,7 @@
                     <a class="mt-2 au-text-primary" href="">Read The Report</a>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-fluid" src="{{ asset('front_assets/images/lower-section.jpg') }}" alt="" />
+                    <img class="img-fluid" src="{{ asset('front_assets/images/1 (12).jpeg') }}" alt="" />
                 </div>
             </div>
         </div>

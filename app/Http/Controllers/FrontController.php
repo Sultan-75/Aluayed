@@ -11,6 +11,8 @@ class FrontController extends Controller
     {
         $result['posts'] = DB::table('posts')
             ->join('post_categories', 'post_categories.id', '=', 'posts.cat_id')
+            ->limit(4)
+            ->orderBy('id', 'desc')
             ->get(['posts.*', 'post_categories.category_name']);
         return view('front.home', $result);
     }
@@ -18,9 +20,19 @@ class FrontController extends Controller
     {
         return view('front.emergency_appeal');
     }
-    public function donate_online()
+    public function donate_online($name = '')
     {
-        return view('front.donate_online');
+        $result['category'] = DB::table('post_categories')->get();
+        if ($name != '') {
+            $arr = DB::table('post_categories')
+                ->where(['category_name' => $name])->get();
+            $result['select_category_name'] = $arr[0]->category_name;
+        } else {
+            $result['select_category_name'] = '';
+        }
+
+        return view('front.donate_online', $result);
+        //return view('front.donate_online');
     }
     public function donate_bank()
     {
@@ -28,7 +40,11 @@ class FrontController extends Controller
     }
     public function project()
     {
-        return view('front.projects');
+        $result['categories'] = DB::table('post_categories')->get();
+        $result['posts'] = DB::table('posts')
+            ->join('post_categories', 'post_categories.id', '=', 'posts.cat_id')
+            ->get(['posts.*', 'post_categories.category_name']);
+        return view('front.projects', $result);
     }
     public function about()
     {

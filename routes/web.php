@@ -44,7 +44,7 @@ Route::get('/verification/{id}', [UserFrontController::class, 'email_verificatio
 Route::get('/donate/user/dashboard', [UserFrontController::class, 'dashboard']);
 Route::get('/donate/user/editprofile', [UserFrontController::class, 'edit_profile']);
 Route::post('/donate/user/edit_profile_process', [UserFrontController::class, 'edit_profile_process'])->name('edit.e_p');
-Route::get('/donate/donation/{name}', [UserFrontController::class, 'dashboard']);
+Route::get('/donate/donation/{name}', [FrontController::class, 'donate_online']);
 /* end Front-end routes */
 
 /* Start Back-end Routes */

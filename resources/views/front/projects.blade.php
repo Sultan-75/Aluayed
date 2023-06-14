@@ -5,138 +5,37 @@
         <img class="img-fluid au-page-header-img" src="{{ asset('front_assets/images/pageHeader.jpg') }}" alt="" />
     </div>
     <!-- projects -->
-    <div class="container-fluid au-bg-accent pt-3 pb-2 mb-3 text-light">
-        <h3 class="text-center">MOST RECENT</h3>
-    </div>
+    @foreach ($categories as $list)
+        <div class="container-fluid au-bg-accent pt-3 pb-2 mb-3 text-light">
+            <h3 class="text-center">{{ $list->category_name }}</h3>
+            @php
+                $id = $list->id;
+            @endphp
+        </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Most Needy</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Qurbani 2023</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Zakat</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="row mb-3">
+                @foreach ($posts as $item)
+                    @php
+                        $cid = $item->cat_id;
+                    @endphp
+                    @if ($id == $cid)
+                        <div class="col-md-4">
+                            <div class="card" style="height: 400px">
+                                <img class="card-img-top img-fluid" src="{{ asset('storage/media/post/' . $item->image) }}"
+                                    alt="Card image" style="height: 200px" />
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $item->post_name }}</h5>
+                                    <p class="card-text my-">
+                                        {{ Str::of($item->post_details)->limit(100) }} <a href="">Read more</a>
+                                    </p>
+                                </div>
+                                <a href="#" class="btn au-btn-donate d-block btn-lg text-light">Donate</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
-    </div>
-
-    <div class="container-fluid au-bg-accent pt-3 pb-2 my-3 text-light">
-        <h3 class="text-center">DAWAH & TARBIYYAH</h3>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Afghanistan Orphanage</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">New School in Afghanistan</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Masjid Construction</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Afghanistan Orphanage</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">New School in Afghanistan</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="{{ asset('front_assets/images/card.jpg') }}" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Masjid Construction</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="btn au-btn-donate d-block">Donate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 @endsection
