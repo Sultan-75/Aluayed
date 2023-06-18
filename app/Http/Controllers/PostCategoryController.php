@@ -28,6 +28,11 @@ class PostCategoryController extends Controller
     }
     public function manage_post_process(Request $request)
     {
+        $request->validate(
+            [
+                'category_name' => 'unique:post_categories,category_name',
+            ]
+        );
         if ($request->post('id') > 0) {
             $model = PostCategory::find($request->post('id'));
             $msg = "Category Updated";

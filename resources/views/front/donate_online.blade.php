@@ -6,10 +6,15 @@
     </div>
     <div class="container">
         <div class="text-right my-3">
-            <a href="{{ url('/donate/user/login') }}" class="btn au-btn-accent">Login</a>
-            <a href="{{ url('/donate/user/registration') }}" class="btn au-btn-accent">Register</a>
+            @if (session('FRONT_USER_ID'))
+                <a href="{{ url('/donate/user/dashboard') }}" class="btn au-btn-accent">Dashboard</a>
+            @else
+                <a href="{{ url('/donate/user/login') }}" class="btn au-btn-accent">Login</a>
+                <a href="{{ url('/donate/user/registration') }}" class="btn au-btn-accent">Register</a>
+            @endif
+
         </div>
-        <h3 class="text-center">Donation Online</h3>
+        <h3 class="text-center">Donate Online</h3>
         <div class="row">
             <div class="col-lg-7">
                 <div class="card px-3 py-3">

@@ -14,6 +14,18 @@ class FrontController extends Controller
             ->limit(4)
             ->orderBy('id', 'desc')
             ->get(['posts.*', 'post_categories.category_name']);
+        $result['edu_posts'] = DB::table('posts')
+            ->join('post_categories', 'post_categories.id', '=', 'posts.cat_id')
+            ->limit(4)
+            ->where(['category_name' => 'Educational Projects'])
+            ->orderBy('id', 'desc')
+            ->get(['posts.*', 'post_categories.category_name']);
+        $result['news_posts'] = DB::table('posts')
+            ->join('post_categories', 'post_categories.id', '=', 'posts.cat_id')
+            ->limit(4)
+            ->where(['category_name' => 'Latest News'])
+            ->orderBy('id', 'desc')
+            ->get(['posts.*', 'post_categories.category_name']);
         return view('front.home', $result);
     }
     public function emergencyappeal()

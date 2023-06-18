@@ -35,6 +35,11 @@
                                             <input id="category_name" name="category_name" type="text"
                                                 value="{{ $category_name }}" class="form-control" aria-required="true"
                                                 aria-invalid="false" required />
+                                            <span class="help-block text-danger">
+                                                @error('category_name')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="form-row mt-3">
@@ -78,7 +83,8 @@
                                                         class="text-decoration-none">
                                                         <i class="fa fa-edit fa-2x"></i>
                                                     </a>
-                                                    <a href="{{ url('admin/category/delete') }}/{{ $item->id }}"
+                                                    <a onclick="return confirm('Read carefully before DELETE!\n________________________\nIf You are Delete this Categoty\nRelated Category Posts Are Removed\nIf yes click OK or Cancel it.');"
+                                                        href="{{ url('admin/category/delete') }}/{{ $item->id }}"
                                                         class="text-decoration-none">
                                                         <i class="fa fa-trash fa-2x text-danger ml-2"></i>
                                                     </a>

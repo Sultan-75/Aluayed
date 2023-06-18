@@ -45,50 +45,19 @@
                 Education Projects
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Library
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
+                @foreach ($edu_posts as $item)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card au-card">
+                            <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
+                            <div class="card-body text-center">
+                                <h5 class="card-text text-center au-text-primary">
+                                    {{ $item->post_name }}
+                                </h5>
+                                <a href="#" class="btn au-btn-card mt-2">Donate now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Library
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Library
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/card.jpg') }}" class="card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Library
-                            </h5>
-                            <a href="#" class="btn au-btn-card mt-2">Donate now</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="row mt-5 text-center">
                 <div class="col-12">
@@ -307,51 +276,24 @@
             <h3 class="text-center au-text-primary my-5">Latest News</h3>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/bottom-card.jpg') }}" class="img-fluid card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Ramadhan 1444 Relief Efforts
-                            </h5>
-                            <p class="py-3">
-                                By Allah’s grace, Ummah Welfare Trust fed
-                                hundreds of thousands of Muslims
-                            </p>
-                            <a href="#" class="btn au-btn-card-bottom mt-2">Read More</a>
+                @foreach ($news_posts as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card au-card">
+                            <img src="{{ asset('front_assets/images/bottom-card.jpg') }}"
+                                class="img-fluid card-img-top" />
+                            <div class="card-body text-center">
+                                <h5 class="card-text text-center au-text-primary">
+                                    {{ $item->post_name }}
+                                </h5>
+                                <p class="py-3">
+                                    By Allah’s grace, Ummah Welfare Trust fed
+                                    hundreds of thousands of Muslims
+                                </p>
+                                <a href="#" class="btn au-btn-card-bottom mt-2">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/bottom-card.jpg') }}" class="img-fluid card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Ramadhan Relief for Bangladesh
-                            </h5>
-                            <p class="py-3">
-                                By Allah’s grace, Ummah Welfare Trust fed
-                                hundreds of thousands of Muslims
-                            </p>
-                            <a href="#" class="btn au-btn-card-bottom mt-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card au-card">
-                        <img src="{{ asset('front_assets/images/bottom-card.jpg') }}" class="img-fluid card-img-top" />
-                        <div class="card-body text-center">
-                            <h5 class="card-text text-center au-text-primary">
-                                Ramadhan Aid for Iraq
-                            </h5>
-                            <p class="py-3">
-                                By Allah’s grace, Ummah Welfare Trust fed
-                                hundreds of thousands of Muslims
-                            </p>
-                            <a href="#" class="btn au-btn-card-bottom mt-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

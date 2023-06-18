@@ -119,15 +119,6 @@ class UserFrontController extends Controller
             $result['address3'] = $arr[0]->address3;
             $result['town'] = $arr[0]->town;
 
-            // $result['category'] = DB::table('post_categories')->get();
-            // if ($name != '') {
-            //     $arr = DB::table('post_categories')
-            //         ->where(['category_name' => $name])->get();
-            //     $result['select_category_name'] = $arr[0]->category_name;
-            // } else {
-            //     $result['select_category_name'] = '';
-            // }
-
             return view('front.user.user_dashboard', $result);
         } else {
             $request->session()->flash('error', 'Please Login');
@@ -223,7 +214,7 @@ class UserFrontController extends Controller
         $request->session()->flash('message', 'Your Password Changed,Now Login');
         return redirect('/donate/user/login');
     }
-    public function donation(Request $request, $name)
+    public function donation($name)
     {
         $result['category'] = DB::table('post_categories')->get();
         if ($name != '') {
